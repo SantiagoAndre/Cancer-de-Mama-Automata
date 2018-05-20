@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from nodes import DirectedWeightedNode,Node
 # estado de un autamata celular, hereda de nodo dirigido ponderado
 class CellularState(DirectedWeightedNode):
@@ -20,4 +20,4 @@ class CellularState(DirectedWeightedNode):
 		for (next_state,value) in self.adjacencies(): # l lista adjacencies tiene duplas (adjacency, weight) = (adyacencia,ponderacion)
 			if path[0]  == value:
 				return  next_state.get_new_state(path[1:])
-		return False
+		return None

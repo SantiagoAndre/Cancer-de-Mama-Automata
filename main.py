@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QMainWindow
+from PyQt5 import QtWidgets, QtGui
 from PyQt5.uic import loadUi
 
 class FormEncuentas(QDialog):
@@ -11,6 +12,7 @@ class FormEncuentas(QDialog):
         loadUi('encuesta.ui', self)
         # Asigna un titulo a la interfaz
         self.setWindowTitle('Cancer de mama')
+        self.setWindowIcon(QtGui.QIcon('ico-cancer_mama.png'))
         # Conecta el boton a la clase FormEncuentas
         self.BtnEnviarEncuesta.clicked.connect(self.enviar_formulario)
 
@@ -24,7 +26,7 @@ class FormEncuentas(QDialog):
                                         self.ckb_5positiva: 8,
                                         self.ckb_6positiva: 5,
                                         self.ckb_7positiva: 7.5,
-                                        self.ckb_8positiva: 7.5,
+                                        self.ckb_8Negativa: 7.5,
                                         self.ckb_9positiva: 10,
                                         self.ckb_10positiva: 5
                                         }
@@ -48,9 +50,8 @@ class FormEncuentas(QDialog):
                 self.numero_celula += self.diccionario_respuestas[respuesta]
         # se enviaran los datos a una nueva funcion
         print("el numero de celulas es ",int(self.numero_celula))
-        #return self.numero_celula
 
-
+        return int(self.numero_celula)
 
 class	prueba(QMainWindow):
 	def __init__(self, parent = None):

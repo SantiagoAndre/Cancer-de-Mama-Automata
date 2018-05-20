@@ -8,7 +8,7 @@ class CellularAutomate(DirectedWeightedGraph):
 	#ya que la filosofoia de este es estregar un nuevo estado, en vez de definir un lengiaje
 	def __init__(self,states,alphabet,transitions):
 		DirectedWeightedGraph.__init__(self)#constructor de la clase base
-		self._alphabet =alphabet 
+		self._alphabet = alphabet
 		self.add_nodes(states)
 		self.add_edges(transitions)
 	#geter
@@ -20,4 +20,7 @@ class CellularAutomate(DirectedWeightedGraph):
 		return CellularState(*node)
 	#el metodo principal de esta clase, retorna el estado al que se llega partiendo de u estado, y sieguiendo un camino
 	def get_new_state(self, start_state,path): #get the state that is reached from this node, following the $path
-		return start_state.get_new_state(path)
+		new_state = start_state.get_new_state(path)
+		if new_state is None:
+				raise Exception("no se llega a ningun estado. partiendo de %s y siguiendo el camino %s."%(start_state,path))
+		return new_state
