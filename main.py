@@ -5,14 +5,13 @@ from PyQt5.QtWidgets import QApplication, QDialog, QWidget, QMainWindow
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.uic import loadUi
 
+from map import Neighborhood
 class FormEncuentas(QDialog):
     def __init__(self, parent = None):
         super(FormEncuentas, self).__init__()
         # Carga el archivo xml encuesta.ui
         loadUi('encuesta.ui', self)
         # Asigna un titulo a la interfaz
-        self.setWindowTitle('Cancer de mama')
-        self.setWindowIcon(QtGui.QIcon('ico-cancer_mama.png'))
         # Conecta el boton a la clase FormEncuentas
         self.BtnEnviarEncuesta.clicked.connect(self.enviar_formulario)
 
@@ -30,7 +29,7 @@ class FormEncuentas(QDialog):
                                         self.ckb_9positiva: 10,
                                         self.ckb_10positiva: 5
                                         }
-
+        self._map = None
     # Decorador
     # Alterar el funcionamiento original de la función que se pasa como parámetro
     @pyqtSlot()
@@ -50,8 +49,9 @@ class FormEncuentas(QDialog):
                 self.numero_celula += self.diccionario_respuestas[respuesta]
         # se enviaran los datos a una nueva funcion
         print("el numero de celulas es ",int(self.numero_celula))
-
-        return int(self.numero_celula)
+        self._map = Neighborhood(self.numero_celula,100,100)
+        self._map.start()
+        return (self.numero_celula)
 
 class	prueba(QMainWindow):
 	def __init__(self, parent = None):
