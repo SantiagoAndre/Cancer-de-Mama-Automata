@@ -1,0 +1,19 @@
+#En este archivo se colocan los porcentajes de infeccion(PI) de su vecindad los cuales las celula cambia de estado
+#el numero de PI que coloque es igual al numero de celulas, numero de colores en colors_file.txt
+#el PI debe estar entre 1 y 100
+#por ejemplo:
+35
+55
+75
+100
+#En este caso:
+#para la celula en el estado 0: si  PI <= 35  nuevo estado: 0; rango [0,35]
+#															  si  PI <= 55  nuevo estado: 1  rango (35,55]
+# 														  si  PI <= 75  nuevo estado: 2  rango (55,75]
+#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
+#para la celula en el estado 1: si  PI <= 55  nuevo estado: 1; rango [0,55]
+#															  si  PI <= 75  nuevo estado: 2  rango (55,75]
+#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
+#para la celula en el estado 2: si  PI <= 75  nuevo estado: 2; rango [0,75]
+#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
+#para la celula en el estado 2: si  PI <= 100 nuevo estado: 3  rango [0,100]

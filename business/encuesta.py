@@ -32,15 +32,15 @@ class FormEncuentas(QDialog):
         Verifica si las casillas agregadas al diccionario han sido seleccionadas,
         si es así, suma el valor del diccionario asociado al checkbox
         """
-        numero_celulas=0
+        porcenntaje_celulas_infectadas=0
         # Itera los objetos checkbox del diccionario_respuestas
         for respuesta in self.diccionario_respuestas:
             # Verifica si ha sido seleccionada
             if respuesta.isChecked():
                 # Suma el valor contenido del diccionario_respuestas
-                numero_celulas += self.diccionario_respuestas[respuesta]
+                porcenntaje_celulas_infectadas += self.diccionario_respuestas[respuesta]
         # se enviaran los datos a una nueva funcion
         #print("el numero de celulas es ",int(numero_celulas))
-        self._map = InterfaceNeighborhood(numero_celulas,100,100)
+        print("El procentaje de infeccion es: ",porcenntaje_celulas_infectadas)
+        self._map = InterfaceNeighborhood(porcenntaje_celulas_infectadas,200,250)
         self._map.start()
-        return (self.numero_celula)

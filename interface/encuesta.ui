@@ -98,18 +98,21 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>0</y>
-      <width>201</width>
+      <width>241</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;10. ¿Usted a Padecido o padece de obesidad?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;10. ¿Usted a padecido o padece de obesidad?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -138,8 +141,8 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. ¿Ha tenido usted Parientes de primer grado con cancer? &lt;br/&gt;          
-	(Ejemplo Madre, Padre o Hermanos)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1. ¿Ha tenido usted Parientes de primer grado con cancer? &lt;br/&gt;
+	(Madre, Padre o Hermanos)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ckb_1positiva">
@@ -174,6 +177,9 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_3">
@@ -201,7 +207,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;2. ¿La llegada de su Ciclo Mestrual fue antes de los 12 años?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;2. ¿La llegada de su Ciclo Menstrual fue antes de los 12 años?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ckb_2positiva">
@@ -228,6 +234,9 @@
     </property>
     <property name="text">
      <string>No</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -284,6 +293,9 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_5">
@@ -311,7 +323,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;4. ¿Ha tomado o toma alguno anticonceptivoso o estrogenos?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;4. ¿Ha tomado o toma algun anticonceptivo o estrogenos?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ckb_4positiva">
@@ -338,6 +350,9 @@
     </property>
     <property name="text">
      <string>No</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -394,6 +409,9 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_7">
@@ -421,7 +439,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>6. ¿Se expone a radiccion solar continunamente?</string>
+     <string>6. ¿Se expone a radiación solar continunamente?</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ckb_6positiva">
@@ -448,6 +466,9 @@
     </property>
     <property name="text">
      <string>No</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -482,7 +503,7 @@
      <number>0</number>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;7. ¿Lleva usted una alimentacion sana y balanceada en &lt;br/&gt;su vida diaria?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;7. ¿Lleva usted una alimentación sana y balanceada en &lt;br/&gt;su vida diaria?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="ckb_7positiva">
@@ -509,6 +530,9 @@
     </property>
     <property name="text">
      <string>No</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -565,6 +589,9 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_10">
@@ -620,6 +647,9 @@
     <property name="text">
      <string>No</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
   </widget>
   <widget class="QLabel" name="label_12">
@@ -632,7 +662,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cancer de mama: ¿Que riesgo tienes de padecerlo ?&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;importante deligenciar toda la encuesta de lo contrario todos los campo se tomaran como no&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Cancer de mama: ¿Que riesgo tienes de padecerlo?&lt;br/&gt;&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Importante deligenciar toda la encuesta de lo contrario todos los campo se tomaran como &quot;No&quot;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>
