@@ -1,19 +1,27 @@
-#En este archivo se colocan los porcentajes de infeccion(PI) de su vecindad los cuales las celula cambia de estado
-#el numero de PI que coloque es igual al numero de celulas, numero de colores en colors_file.txt
-#el PI debe estar entre 1 y 100
-#por ejemplo:
-35
-55
-75
-100
-#En este caso:
-#para la celula en el estado 0: si  PI <= 35  nuevo estado: 0; rango [0,35]
-#															  si  PI <= 55  nuevo estado: 1  rango (35,55]
-# 														  si  PI <= 75  nuevo estado: 2  rango (55,75]
-#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
-#para la celula en el estado 1: si  PI <= 55  nuevo estado: 1; rango [0,55]
-#															  si  PI <= 75  nuevo estado: 2  rango (55,75]
-#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
-#para la celula en el estado 2: si  PI <= 75  nuevo estado: 2; rango [0,75]
-#															  si  PI <= 100 nuevo estado: 3  rango (75,100]
-#para la celula en el estado 2: si  PI <= 100 nuevo estado: 3  rango [0,100]
+#En este archivo se configura como cambian de estado las celulas, como se comportan cuando estan en un estado determinado,
+#de acuerdo a su entorno que es medido con un estado promedio(EP) de sus celulas vecinas
+#el numero de estados es el mismo que colors_file.txt
+#
+#cada fila configura el comportamiento de un solo ESTADO INICIAL, se colocan todos los EP(de forma asendente) en los que cambia a otro
+#estado.
+#el primer EP colocado es el EP minimo para que la celula se quede en su mismo estado, el siguiente es el minimo para que cambie al
+#siguiente estado y asi hasta maximo el ultimo estado(se puede dar el caso de que no se llege a todos los estados partiendo de un estado).
+#
+#la primera fila configura el primer estado y asi en forma ascendente.
+#se tienen que cubrir todos los valores de EP por que sino marcara error(el ultimo valor tiene que ser 100)
+#
+#             Estados finales:
+#                    ^
+#                  /   \
+#  |------------------------------------|
+#  E0  E1  E2  E3  E4  E5  E6  E7  E8  E9
+   21  37  50  67  75  85  100             #E0--
+       25  38  54  60  70  80  100         #E1  |
+           35  48  60  72  81  90  100     #E2  |
+               40  60  74  80  90  100     #E3  |
+                   55  70  84  100         #E4  |\
+                       70  85  90  100     #E5  | > Estados iniciales
+                           70  80  100     #E6  |/
+                               80  100     #E7  |
+                                   80  100 #E8  |
+                                       100 #E9--

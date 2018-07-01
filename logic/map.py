@@ -33,19 +33,17 @@ class Neighborhood:
 
 	#crea la primera generacion
 	def init_generation(self,rows, columns, pcj_celulas_infectadas = 95):
+		print(pcj_celulas_infectadas)
 		## creador de celulas
 		self._cell_maker = CellMaker()
 		#obtengo todos los posibles estados de las celulas
 		all_states = self.cell_maker().all_states()
-		#el estado mas sano
-		FASE0 = all_states[0]
 		#el numero del maximo estado
 		pos_max_state = len(all_states)-1
 		#obtengo el estado minimo
 		FASE0 = all_states[0] #estado sano
 		#numero de celulas a infectar
 		celulas_a_infectar = int(rows*columns*(pcj_celulas_infectadas/100))
-
 		#genero todas las celulas
 		cells = [[self.cell_maker().create(FASE0) for _ in range(columns)]for _ in  range(rows)]
 
@@ -66,10 +64,10 @@ class Neighborhood:
 		self._cells = cells
 		self._infeccion = infeccion
 
-	def porcentaje_infeccion(self, i,j,max_infeccion):# que tan infectado esta el barrio de cada celula
+	def porcentaje_infeccion(self, i,j):# que tan infectado esta el barrio de cada celula
 		cells = self.cells()
 		celula_central = cells[i][j]
-		prof = 1
+		prof = 2
 
 		max_i,max_j = len(cells)-1,len(cells[0])-1
 		if i-prof<=0:
@@ -100,7 +98,7 @@ class Neighborhood:
 		cells  = self.cells() #saca las celulas en una variable
 		for i,row in enumerate(cells): #recorre toda la matriz obteniendo cada fila
 			for j,cell in enumerate(row): #recorre toda la celula obteniendo cada celula
-				porcentaje_infeccion = self.porcentaje_infeccion(i,j,cell.automata()._nodes[-1].element())
+				porcentaje_infeccion = self.porcentaje_infeccion(i,j)
 				self._infeccion += cell.evolucionar(porcentaje_infeccion)
 				yield cell,i,j
 		self._generation+= 1

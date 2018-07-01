@@ -17,9 +17,31 @@ def read_colors_file():
 		colors.append(color)
 	return colors
 def read_ranges_file():
+	f = open("resources/files/ranges_file.txt")
+	end_line = True
+	str_number = ""
+	while True:
+		c = f.read(1)
+		if c == "#":
+			f.readline()
+			
+			#print("ignorado: ",f.readline())#lee toda la linea, y la ignora
+			if  end_line:
+				while f.read(1)=="#":
+					f.readline()
+				end_line = False
+				continue
+			c = '\n'
+		if not c:
+			yield -1
+			break
+		if end_line:
+			yield -1
 
-	for piv in open("resources/files/ranges_file.txt"):
-		if piv[-1] is "\n":
-			piv = piv[:-1]
-		if not (piv[0]  is "#"):
-			yield float(piv)
+		end_line = c =='\n'
+		if (c==" " or c == "\n"):
+			if str_number:
+				yield int(str_number)
+			str_number = ""
+		else:
+			str_number +=c

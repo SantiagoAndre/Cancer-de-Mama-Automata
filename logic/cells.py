@@ -21,13 +21,18 @@ class CellMaker:
 		from logic.utilities import read_ranges_file
 		self._num_states, STATES = self.init_estados()
 		T = []
+		pivotes = read_ranges_file()
 		for ei,_ in STATES:
-			pivotes = read_ranges_file()
+			
 			for (ef,_) in STATES:
-				pibote = pivotes.__next__()
 				if ef<ei:
 					continue
+				pibote = pivotes.__next__()
+				if pibote  == -1:
+					break
 				T.append((ei,ef,round(pibote)))
+			if pibote != -1:
+				pibote = pivotes.__next__()
 		return CellularAutomate(STATES,(0,100),T) # guarda el automata en un atributo de  Neighborhood
 	def init_estados(self):
 		from logic.utilities import read_colors_file
